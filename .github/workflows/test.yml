@@ -61,5 +61,5 @@ jobs:
       - name: Document artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts
-          path: build
+          name: html-artifacts
+          path: build/html/
