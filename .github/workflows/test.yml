@@ -57,3 +57,9 @@ jobs:
 
       - name: Build the docs
         run: make html
+
+      - name: Document artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-output
+          path: build/html
