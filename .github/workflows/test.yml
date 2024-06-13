@@ -58,8 +58,17 @@ jobs:
       - name: Build the docs
         run: make html
 
-      - name: Document artifacts
+      - name: Upload document artifacts
         uses: actions/upload-artifact@v4
         with:
           name: html-artifacts
-          path: build/html/
+          path: build/html
+
+  download:
+    needs: [build]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download document artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: html-artifacts
