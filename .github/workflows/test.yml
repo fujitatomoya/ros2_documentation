@@ -69,6 +69,5 @@ jobs:
           if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
 
       - name: Output artifact URL
-        run:  echo 'Artifact URL is ${{ steps.artifact-upload-step.outputs.artifact-url }}'
-        success: |
-          core.summary "Artifact URL: ${{ steps.artifact-upload-step.outputs.artifact-url }}"
+        run:  echo 'Artifact URL is ${{ steps.artifact-upload-step.outputs.artifact-url }}' >> $GITHUB_STEP_SUMMARY
+
