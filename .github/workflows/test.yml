@@ -65,9 +65,5 @@ jobs:
           name: html-artifacts
           path: build/html
 
-  artifacts:
-    needs: [build]
-    runs-on: ubuntu-22.04
-    steps:
       - name: Output artifact URL
         run:  echo 'Artifact URL is ${{ steps.artifact-upload-step.outputs.artifact-url }}'
