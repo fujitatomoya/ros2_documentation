@@ -60,15 +60,14 @@ jobs:
 
       - name: Upload document artifacts
         uses: actions/upload-artifact@v4
+        id: artifact-upload-step
         with:
           name: html-artifacts
           path: build/html
 
-  download:
+  artifacts:
     needs: [build]
     runs-on: ubuntu-22.04
     steps:
-      - name: Download document artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: html-artifacts
+      - name: Output artifact URL
+        run:  echo 'Artifact URL is ${{ steps.artifact-upload-step.outputs.artifact-url }}'
