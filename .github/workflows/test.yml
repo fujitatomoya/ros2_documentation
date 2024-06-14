@@ -70,4 +70,3 @@ jobs:
 
       - name: Output artifact URL
         run:  echo 'Artifact URL is ${{ steps.artifact-upload-step.outputs.artifact-url }}' >> $GITHUB_STEP_SUMMARY
-
